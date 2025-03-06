@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Menu</title>
 </head>
+
 <body>
     <h1>Menu del Restaurante</h1>
     <ul id="menu-lista"></ul>
 
     <script>
-        fetch("https://cors-anywhere.herokuapp.com/http://web-test.infinityfreeapp.com/api.php") // Cambia por la URL real de tu API
+        fetch("https://cors-anywhere.herokuapp.com/http://web-test.infinityfreeapp.com/api.php", {
+            headers: {
+                "X-Requested-With": "XMLHttpRequest"
+            }
+        })
             .then(response => response.json())
             .then(data => {
                 let menuLista = document.getElementById("menu-lista");
@@ -22,6 +28,8 @@
                 });
             })
             .catch(error => console.error("Error al obtener los datos:", error));
+
     </script>
 </body>
+
 </html>
