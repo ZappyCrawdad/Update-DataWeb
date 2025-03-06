@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Menu</title>
+</head>
+<body>
+    <h1>Menu del Restaurante</h1>
+    <ul id="menu-lista"></ul>
+
+    <script>
+        fetch("http://localhost/Update-Web-Data/api.php") // Cambia por la URL real de tu API
+            .then(response => response.json())
+            .then(data => {
+                let menuLista = document.getElementById("menu-lista");
+                menuLista.innerHTML = "";
+                data.forEach(item => {
+                    let li = document.createElement("li");
+                    li.innerHTML = `${item.producto}: $${item.precio}`;
+                    menuLista.appendChild(li);
+                });
+            })
+            .catch(error => console.error("Error al obtener los datos:", error));
+    </script>
+</body>
+</html>
