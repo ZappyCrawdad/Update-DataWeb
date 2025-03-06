@@ -12,11 +12,7 @@
     <ul id="menu-lista"></ul>
 
     <script>
-        fetch("https://cors-anywhere.herokuapp.com/http://web-test.infinityfreeapp.com/api.php", {
-            headers: {
-                "X-Requested-With": "XMLHttpRequest"
-            }
-        })
+        fetch("http://localhost/Update-Web-Data/api.php") // Cambia por la URL real de tu API
             .then(response => response.json())
             .then(data => {
                 let menuLista = document.getElementById("menu-lista");
@@ -28,7 +24,6 @@
                 });
             })
             .catch(error => console.error("Error al obtener los datos:", error));
-
     </script>
 </body>
 
