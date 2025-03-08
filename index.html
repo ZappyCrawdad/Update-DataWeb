@@ -12,7 +12,7 @@
     <ul id="menu-lista"></ul>
 
     <script>
-        fetch("http://localhost/Update-Web-Data/api.php") // Cambia por la URL real de tu API
+        fetch("https://backend-dataweb-production.up.railway.app/api.php") // Cambia por la URL real de tu API
             .then(response => response.json())
             .then(data => {
                 let menuLista = document.getElementById("menu-lista");
